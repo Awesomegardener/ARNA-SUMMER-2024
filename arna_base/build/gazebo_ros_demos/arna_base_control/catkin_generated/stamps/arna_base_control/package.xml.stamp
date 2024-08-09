@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<package>
+  <name>arna_base_control</name>
+  <version>0.0.0</version>
+  <description>The arna_base_control package</description>
+
+  <maintainer email="davetcoleman@gmail.com">Dave Coleman</maintainer>
+
+  <license>BSD</license>
+
+  <url type="website">http://http://gazebosim.org/w/index.php?title=Tutorials/1.9/Using_A_URDF_In_Gazebo</url>
+  <url type="bugtracker">https://github.com/osrf/gazebo_ros_demos/issues</url>
+  <url type="repository">https://github.com/osrf/gazebo_ros_demos</url>
+
+  <author email="davetcoleman@gmail.com">Dave Coleman</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>controller_interface</build_depend>
+  <build_depend>controller_manager</build_depend>
+  <build_depend>realtime_tools</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>urdf</build_depend>
+
+  <run_depend>controller_interface</run_depend>
+  <run_depend>controller_manager</run_depend>
+  <run_depend>realtime_tools</run_depend>
+  <run_depend>nav_msgs</run_depend>
+  <run_depend>tf</run_depend>
+  <run_depend>urdf</run_depend>
+
+  <run_depend>controller_manager</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>effort_controllers</run_depend>
+  
+  
+  <run_depend>gazebo_ros_control</run_depend>
+  <run_depend>xacro</run_depend>
+  <run_depend>gazebo_ros</run_depend>
+
+
+  <export>
+    <controller_interface plugin="${prefix}/mecanum_drive_controller_plugins.xml"/>
+  </export>
+
+</package>

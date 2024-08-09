@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b0121/fast"
+/usr/bin/make -f CMakeFiles/cmTC_b0121.dir/build.make CMakeFiles/cmTC_b0121.dir/build
+make[1]: Entering directory '/home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_b0121.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_b0121.dir/CheckSymbolExists.c.o   -c /home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_b0121
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b0121.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_b0121.dir/CheckSymbolExists.c.o  -o cmTC_b0121 -rdynamic 
+CMakeFiles/cmTC_b0121.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b0121.dir/build.make:97: recipe for target 'cmTC_b0121' failed
+make[1]: *** [cmTC_b0121] Error 1
+make[1]: Leaving directory '/home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_b0121/fast' failed
+make: *** [cmTC_b0121/fast] Error 2
+
+File /home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1dd19/fast"
+/usr/bin/make -f CMakeFiles/cmTC_1dd19.dir/build.make CMakeFiles/cmTC_1dd19.dir/build
+make[1]: Entering directory '/home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1dd19.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_1dd19.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_1dd19
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1dd19.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_1dd19.dir/CheckFunctionExists.c.o  -o cmTC_1dd19 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_1dd19.dir/build.make:97: recipe for target 'cmTC_1dd19' failed
+make[1]: *** [cmTC_1dd19] Error 1
+make[1]: Leaving directory '/home/user/catkin_workspace/build/gen3_robotiq_2f_85_move_it_config/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_1dd19/fast' failed
+make: *** [cmTC_1dd19/fast] Error 2
+
+

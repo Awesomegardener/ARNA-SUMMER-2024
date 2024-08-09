@@ -1,0 +1,2 @@
+gazebo_ros_demos-kinetic-devel/custom_plugin_tutorial:gazebo_ros_demos-kinetic-devel/rrbot_control:gazebo_ros_demos-kinetic-devel/rrbot_description:gazebo_ros_demos-kinetic-devel/rrbot_gazebo:gazebo_ros_demos/arna_base_control:gazebo_ros_demos/arna_base_description:gazebo_ros_demos/arna_base_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/user/arna_base/devel -DCMAKE_INSTALL_PREFIX=/home/user/arna_base/install -G Unix Makefiles

@@ -1,0 +1,21 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="prefix" default="" />
+
+    <!-- Load the controllers configuration from the YAML file -->
+    <rosparam file="$(find arna_base_control)/config/joint_position_controllers.yaml" command="load" />
+
+    <!-- Start the joint state controller -->
+    <node name="$(arg prefix)joint_state_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)joint_state_controller" />
+
+    <!-- Start the joint trajectory controller -->
+    <node name="$(arg prefix)gen3_joint_trajectory_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)gen3_joint_trajectory_controller" />
+
+    <!-- Start individual joint position controllers -->
+    <node name="$(arg prefix)joint_1_position_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)joint_1_position_controller" />
+    <node name="$(arg prefix)joint_2_position_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)joint_2_position_controller" />
+    <node name="$(arg prefix)joint_3_position_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)joint_3_position_controller" />
+    <node name="$(arg prefix)joint_4_position_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)joint_4_position_controller" />
+    <node name="$(arg prefix)joint_5_position_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)joint_5_position_controller" />
+    <node name="$(arg prefix)joint_6_position_controller_spawner" pkg="controller_manager" type="spawner" args="$(arg prefix)joint_6_position_controller" />
+</launch>

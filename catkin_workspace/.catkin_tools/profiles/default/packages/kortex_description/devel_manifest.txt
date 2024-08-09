@@ -1,0 +1,8 @@
+ros_kortex/kortex_description
+/home/user/catkin_workspace/devel/.private/kortex_description/local_setup.zsh /home/user/catkin_workspace/devel/./local_setup.zsh
+/home/user/catkin_workspace/devel/.private/kortex_description/cmake.lock /home/user/catkin_workspace/devel/./cmake.lock
+/home/user/catkin_workspace/devel/.private/kortex_description/local_setup.sh /home/user/catkin_workspace/devel/./local_setup.sh
+/home/user/catkin_workspace/devel/.private/kortex_description/local_setup.bash /home/user/catkin_workspace/devel/./local_setup.bash
+/home/user/catkin_workspace/devel/.private/kortex_description/lib/pkgconfig/kortex_description.pc /home/user/catkin_workspace/devel/lib/pkgconfig/kortex_description.pc
+/home/user/catkin_workspace/devel/.private/kortex_description/share/kortex_description/cmake/kortex_descriptionConfig-version.cmake /home/user/catkin_workspace/devel/share/kortex_description/cmake/kortex_descriptionConfig-version.cmake
+/home/user/catkin_workspace/devel/.private/kortex_description/share/kortex_description/cmake/kortex_descriptionConfig.cmake /home/user/catkin_workspace/devel/share/kortex_description/cmake/kortex_descriptionConfig.cmake

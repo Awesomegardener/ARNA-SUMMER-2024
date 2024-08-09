@@ -1,0 +1,13 @@
+digraph G {
+"map" -> "odom"[label="Broadcaster: /amcl\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 658.130 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "bl_link"[label="Broadcaster: /base_link_to_bl_link_tf_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 658.130 sec old)\nBuffer length: 0.000 sec\n"];
+"odom" -> "base_link"[label="Broadcaster: /gazebo\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 658.130 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "br_link"[label="Broadcaster: /base_link_to_br_link_tf_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 658.130 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "fr_link"[label="Broadcaster: /base_link_to_fr_link_tf_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 658.130 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "fl_link"[label="Broadcaster: /base_link_to_fl_link_tf_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 658.130 sec old)\nBuffer length: 0.000 sec\n"];
+"base_link" -> "hokuyo_link"[label="Broadcaster: /base_link_to_hokuyo_link_tf_publisher\nAverage rate: 10000.000 Hz\nMost recent transform: 0.000 ( 658.130 sec old)\nBuffer length: 0.000 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 658.130"[ shape=plaintext ] ;
+ }->"map";
+}

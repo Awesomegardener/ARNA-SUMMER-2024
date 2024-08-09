@@ -1,0 +1,146 @@
+Not searching for unused variables given on the command line.
+[36m--[0m The C compiler identification is GNU 5.4.0
+[36m--[0m The CXX compiler identification is GNU 5.4.0
+[36m--[0m Check for working C compiler: /usr/bin/cc
+[36m--[0m Check for working C compiler: /usr/bin/cc -- works
+[36m--[0m Detecting C compiler ABI info
+[36m--[0m Detecting C compiler ABI info - done
+[36m--[0m Detecting C compile features
+[36m--[0m Detecting C compile features - done
+[36m--[0m Check for working CXX compiler: /usr/bin/c++
+[36m--[0m Check for working CXX compiler: /usr/bin/c++ -- works
+[36m--[0m Detecting CXX compiler ABI info
+[36m--[0m Detecting CXX compiler ABI info - done
+[36m--[0m Detecting CXX compile features
+[36m--[0m Detecting CXX compile features - done
+CONAN_TARGET_PLATFORM is x86
+[36m--[0m Using CATKIN_DEVEL_PREFIX: /home/user/catkin_workspace/devel/.private/kortex_driver
+[36m--[0m Using CMAKE_PREFIX_PATH: /home/user/catkin_workspace/devel;/home/user/catkin_ws/devel;/home/user/simulation_ws/devel;/home/simulations/public_sim_ws/devel;/opt/ros/kinetic
+[36m--[0m This workspace overlays: /home/user/catkin_workspace/devel;/home/user/catkin_ws/devel;/home/user/simulation_ws/devel;/home/simulations/public_sim_ws/devel;/opt/ros/kinetic
+[36m--[0m Found PythonInterp: /usr/bin/python2 (found suitable version "2.7.12", minimum required is "2")
+[36m--[0m Using PYTHON_EXECUTABLE: /usr/bin/python2
+[36m--[0m Using Debian Python package layout
+[36m--[0m Using empy: /usr/bin/empy
+[36m--[0m Using CATKIN_ENABLE_TESTING: ON
+[36m--[0m Call enable_testing()
+[36m--[0m Using CATKIN_TEST_RESULTS_DIR: /home/user/catkin_workspace/build/kortex_driver/test_results
+[36m--[0m Found gtest sources under '/usr/src/gmock': gtests will be built
+[36m--[0m Found gmock sources under '/usr/src/gmock': gmock will be built
+[36m--[0m Found PythonInterp: /usr/bin/python2 (found version "2.7.12")
+[36m--[0m Looking for pthread.h
+[36m--[0m Looking for pthread.h - found
+[36m--[0m Looking for pthread_create
+[36m--[0m Looking for pthread_create - not found
+[36m--[0m Looking for pthread_create in pthreads
+[36m--[0m Looking for pthread_create in pthreads - not found
+[36m--[0m Looking for pthread_create in pthread
+[36m--[0m Looking for pthread_create in pthread - found
+[36m--[0m Found Threads: TRUE
+[36m--[0m Using Python nosetests: /usr/local/bin/nosetests-2.7
+[36m--[0m catkin 0.7.20
+[36m--[0m BUILD_SHARED_LIBS is on
+[36m--[0m Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[36m--[0m Boost version: 1.58.0
+[36m--[0m Found the following Boost libraries:
+[36m--[0m   system
+[36m--[0m Generating .msg files for action kortex_driver/FollowCartesianTrajectory /home/user/catkin_workspace/src/ros_kortex/kortex_driver/action/non_generated/FollowCartesianTrajectory.action
+Generating for action FollowCartesianTrajectory
+[36m--[0m kortex_driver: 436 messages, 263 services
+[36m--[0m Conan: checking conan executable in path
+[36m--[0m Conan: Found program /usr/local/bin/conan
+[36m--[0m Conan: Version found Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 635, in _build_master
+    ws.require(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 943, in require
+    needed = self.resolve(parse_requirements(requirements))
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 834, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (Jinja2 2.11.3 (/usr/local/lib/python3.5/dist-packages), Requirement.parse('Jinja2<4.0.0,>=3.0; python_version >= "3"'), {{'conan'}})
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/conan", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2927, in <module>
+    @{atunderscore}call_aside
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2913, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2940, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 637, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 650, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 829, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'Jinja2<4.0.0,>=3.0; python_version >= "3"' distribution was not found and is required by conan
+
+[36m--[0m Conan: Adding kinova_public remote repository (https://artifactory.kinovaapps.com/artifactory/api/conan/conan-public)
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 635, in _build_master
+    ws.require(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 943, in require
+    needed = self.resolve(parse_requirements(requirements))
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 834, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (Jinja2 2.11.3 (/usr/local/lib/python3.5/dist-packages), Requirement.parse('Jinja2<4.0.0,>=3.0; python_version >= "3"'), {{'conan'}})
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/conan", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2927, in <module>
+    @{atunderscore}call_aside
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2913, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2940, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 637, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 650, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 829, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'Jinja2<4.0.0,>=3.0; python_version >= "3"' distribution was not found and is required by conan
+[36m--[0m Conan: Automatic detection of conan settings from cmake
+[36m--[0m Conan: Settings= -s;build_type=Release;-s;compiler=gcc;-s;compiler.version=5;-s;compiler.libcxx=libstdc++11;-s;kortex_api_cpp:compiler=gcc;-s;kortex_api_cpp:compiler.version=5;-s;kortex_api_cpp:compiler.libcxx=libstdc++11;-s;kortex_api_cpp:build_type=Release
+[36m--[0m Conan executing: conan install /home/user/catkin_workspace/src/ros_kortex/kortex_driver/conanfile.py -s build_type=Release -s compiler=gcc -s compiler.version=5 -s compiler.libcxx=libstdc++11 -s kortex_api_cpp:compiler=gcc -s kortex_api_cpp:compiler.version=5 -s kortex_api_cpp:compiler.libcxx=libstdc++11 -s kortex_api_cpp:build_type=Release -g=cmake --update
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 635, in _build_master
+    ws.require(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 943, in require
+    needed = self.resolve(parse_requirements(requirements))
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 834, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (Jinja2 2.11.3 (/usr/local/lib/python3.5/dist-packages), Requirement.parse('Jinja2<4.0.0,>=3.0; python_version >= "3"'), {{'conan'}})
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/conan", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2927, in <module>
+    @{atunderscore}call_aside
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2913, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2940, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 637, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 650, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 829, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'Jinja2<4.0.0,>=3.0; python_version >= "3"' distribution was not found and is required by conan
+[31m[1mCMake Error[0m at /home/user/catkin_workspace/src/ros_kortex/kortex_driver/cmake/conan.cmake:399 (message):
+  Conan install failed='1'
+[36mCall Stack (most recent call first):[0m
+  cmake/conan.cmake:485 (conan_cmake_install)
+  CMakeLists.txt:86 (conan_cmake_run)
+
+
+[36m--[0m Configuring incomplete, errors occurred!
+See also "/home/user/catkin_workspace/build/kortex_driver/CMakeFiles/CMakeOutput.log".
+See also "/home/user/catkin_workspace/build/kortex_driver/CMakeFiles/CMakeError.log".

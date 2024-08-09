@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<robot name="arna_base_arm" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- Arguments -->
+<xacro:include filename="$(find arna_base_description)/urdf/arna_base.gazebo" />
+<xacro:include filename="$(find arna_base_description)/urdf/arna_base.xacro" />
+
+<xacro:arg name="arm" default="gen3" />
+<xacro:arg name="dof" default="7" />
+<xacro:arg name="vision" default="true" />
+
+<xacro:arg name="gripper" default="" />
+<xacro:arg name="prefix" default="" />
+<xacro:arg name="sim" default="false" />
+<xacro:arg name="prefix" default="" />
+
+<xacro:include filename="$(find arna_base_description)/urdf/kortex_robot.xacro" />
+<xacro:load_robot arm="$(arg arm)" gripper="$(arg gripper)" dof="$(arg dof)" vision="$(arg vision)" sim="$(arg sim)" prefix="$(arg prefix)" />
+
+</robot>

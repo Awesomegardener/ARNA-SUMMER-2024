@@ -1,0 +1,12 @@
+Last Config Dir: /home/user/.rviz
+Last Image Dir: ""
+Recent Configs:
+  - /home/user/.rviz/default.rviz
+  - /home/user/arna_base/src/gazebo_ros_demos/arna_base_description/launch/arna_base.rviz
+  - /home/user/.rviz/arna1.rviz
+  - /home/user/simulation_ws/src/aws-robomaker-hospital-world/rviz/navigation.rviz
+  - /home/user/arna_base/src/gazebo_ros_demos-kinetic-devel/rrbot_description/launch/rrbot.rviz
+  - /opt/ros/melodic/share/pr2_navigation_global/rviz/move_base.rviz
+  - /opt/ros/melodic/share/pr2_navigation_slam/rviz/move_base_slam.rviz
+  - /home/user/catkin_ws/src/panda_moveit_config/launch/moveit.rviz
+  - /home/user/ws_moveit/src/panda_moveit_config/launch/moveit.rviz

@@ -1,0 +1,698 @@
+<?xml version="1.0"?>
+
+<robot name="arna_base" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find arna_base_description)/urdf/arna_base.gazebo" />
+    <xacro:include filename="$(find kortex_description)/arms/gen3/7dof/urdf/gen3_macro.xacro"/>
+ 
+    <load_arm parent="_base_link" dof="7" vision="false" prefix="arm_">
+        <origin xyz="0.15 0.3 0.457" rpy="0 0 0"/>
+    </load_arm> 
+
+
+    <xacro:property name="bodylen" value="0.101544" />
+    <xacro:property name="width" value="0.101478" />
+
+  <!-- <link name="world"/> -->
+        <joint
+            name="arm_to_arna"
+            type="fixed">
+            <origin xyz="-0.15 -0.33 -0.45" rpy="0 0 0"/>
+            <parent
+                link="arm_base_link" />
+            <child
+                link="base_link" />
+        </joint>
+  
+
+
+  <link name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0" 
+        rpy="0 0 0" /> <!-- xyz = "-0.0035731875614072 0.242136118748611 -0.0486968548113747"-->
+      <mass
+        value="127.979476827935" />
+      <inertia
+        ixx="8.92508720014459"
+        ixy="0.386969604653879"
+        ixz="-0.183135216071402"
+        iyy="9.43135313907935"
+        iyz="0.55988655947468"
+        izz="9.13799322069061" />
+    </inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arna_base_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://arna_base_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="fl_joint" type="continuous">
+    <origin
+      xyz="-0.37084 0.31317 0.1016"
+      rpy="1.5708 -0.62539 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_link" />
+    <axis
+      xyz="0 0 -1" /> <!--0 0 -1-->
+<!--     <limit
+      effort="30"
+      velocity="1.0" /> -->
+  </joint>
+
+  <link name="fl_link">
+    <inertial>
+      <origin
+        xyz="-2.3929E-05 -1.0301E-07 0.05357" 
+        rpy="0 0 0" /> <!--xyz = -->
+      <mass
+        value="5.5136" />
+      <inertia
+        ixx="0.012979"
+        ixy="1.3657E-11"
+        ixz="-3.6507E-09"
+        iyy="0.012979"
+        iyz="-2.742E-09"
+        izz="0.017507" />
+    </inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0" 
+        rpy="0 0 0" /> <!-- xyz="$0 0 {bodylen/2}" if cylinder is used -->
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <mesh
+          filename="package://arna_base_description/meshes/fl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 ${bodylen/2}"
+        rpy="0 0 0" />
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <sphere radius="${width}" />
+<!--         <mesh
+          filename="package://arna_base_description/meshes/fl_link.STL" /> -->
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="fr_joint" type="continuous">
+    <origin
+      xyz="0.37084 0.31317 0.1016"
+      rpy="1.5708  0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_link" />
+    <axis
+      xyz="0 0 -1" /> <!--0 0 -1-->
+<!--     <limit
+      effort="30"
+      velocity="1.0" /> -->
+  </joint>
+
+  
+  <link name="fr_link">
+    <inertial>
+      <origin
+        xyz="-2.3976E-05 -1.0318E-09 -0.05357"
+        rpy="0 0 0" /> <!-- xyz= -->
+      <mass
+        value="5.5137" />
+      <inertia
+        ixx="0.01298"
+        ixy="1.3643E-13"
+        ixz="-3.6682E-09"
+        iyy="0.01298"
+        iyz="-2.7766E-10"
+        izz="0.017507" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0" 
+        rpy="0 0 0" /> <!-- xyz="0 0 ${-bodylen/2}" if cylinder is used -->
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <mesh
+          filename="package://arna_base_description/meshes/fr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 ${-bodylen/2}"
+        rpy="0 0 0" />
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <sphere radius="${width}" />
+        <!-- <mesh
+          filename="package://arna_base_description/meshes/fr_link.STL" /> -->
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="bl_joint"
+    type="continuous">
+    <origin
+      xyz="-0.37084 -0.31317 0.1016"
+      rpy="1.5708 -0.79346 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="bl_link" />
+    <axis
+      xyz="0 0 1" /> <!--0 0 1-->
+<!--     <limit
+      effort="30"
+      velocity="1.0" /> -->
+  </joint>
+
+  <link name="bl_link">
+    <inertial>
+      <origin
+        xyz="-2.3976E-05 -1.0318E-09 -0.05357"
+        rpy="0 0 0" />
+      <mass
+        value="5.5137" />
+      <inertia
+        ixx="0.01298"
+        ixy="1.3644E-13"
+        ixz="-3.6682E-09"
+        iyy="0.01298"
+        iyz="-2.7766E-10"
+        izz="0.017507" />
+    </inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" /> <!-- xyz="$0 0 {-bodylen/2}" if cylinder is used -->
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <mesh
+          filename="package://arna_base_description/meshes/bl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 ${-bodylen/2} "
+        rpy="0 0 0" />
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <sphere radius="${width}" />
+<!--         <mesh
+          filename="package://arna_base_description/meshes/bl_link.STL" /> -->
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="br_joint" type="continuous">
+    <origin
+      xyz="0.37085 -0.31317 0.1016"
+      rpy="1.5708 -0.62539 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="br_link" />
+    <axis
+      xyz="0 0 1" /> <!--0 0 1-->
+<!--     <limit
+      effort="30"
+      velocity="1.0" /> -->
+  </joint>
+
+  <link name="br_link">
+    <inertial>
+      <origin
+        xyz="-2.3929E-05 -1.0301E-07 0.05357"
+        rpy="0 0 0" />
+      <mass
+        value="5.5136" />
+      <inertia
+        ixx="0.012979"
+        ixy="1.3657E-11"
+        ixz="-3.6507E-09"
+        iyy="0.012979"
+        iyz="-2.742E-09"
+        izz="0.017507" />
+    </inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" /> <!-- xyz="$0 0 {bodylen/2}" if cylinder is used -->
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <mesh
+          filename="package://arna_base_description/meshes/br_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 ${bodylen/2} "
+        rpy="0 0 0" />
+      <geometry>
+        <!-- <cylinder radius="${width}" length="${bodylen}"/> -->
+        <sphere radius="${width}" />
+        <!-- <mesh
+          filename="package://arna_base_description/meshes/br_link.STL" /> -->
+      </geometry>
+    </collision>
+  </link>
+ <!--rpy="3.14159265358979 1.09937075168372E-32 0" />-->
+   <joint name="hokuyo_joint" type="fixed">
+        <axis xyz="0 0 0" />
+        <origin xyz="0 0.5 0.3" rpy="0 0 1.5708"/>
+        <parent link="base_link"/>
+        <child link="hokuyo_link"/>
+    </joint>
+
+  <!-- Hokuyo Laser-->
+    <link name="hokuyo_link">
+      <collision>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+      <box size="0.1 0.1 0.1"/>
+        </geometry>
+      </collision>
+
+     <visual>
+       <origin xyz="0 0 0" rpy="0 0 0"/>
+       <geometry>
+         <mesh filename="package://arna_base_description/meshes/hokuyo.dae"/>
+       </geometry>
+     </visual>
+
+     <inertial>
+      <mass value="1e-5" />
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+     </inertial>
+  </link>
+  <!--________________________________ARNA_ARM___________________________
+    <joint name="arna1_arm_joint" type="fixed">
+        <axis xyz="0 0 0" />
+        <origin xyz="0.15 0.3 0.457" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="arm1_base_link"/>
+    </joint>
+    <link name="arm1_base_link">
+    
+    <inertial>
+      <origin xyz="-0.000648 -0.000166 0.084487" rpy="0 0 0" />
+      <mass value="1.697" />
+      <inertia ixx="0.004622" ixy="9E-06" ixz="6E-05" iyy="0.004495" iyz="9E-06" izz="0.002079" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/base_link2.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/base_link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Shoulder_Link">
+    <inertial>
+      <origin xyz="-2.3E-05 -0.010364 -0.07336" rpy="0 0 0" />
+      <mass value="1.3773" />
+      <inertia ixx="0.00457" ixy="1E-06" ixz="2E-06" iyy="0.004831" iyz="0.000448" izz="0.001409" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/shoulder_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Actuator1" type="continuous">
+    <origin xyz="0 0 0.15643" rpy="3.1416 2.7629E-18 -4.9305E-36" />
+    <parent link="arm1_base_link" />
+    <child link="Shoulder_Link" />
+    <axis xyz="0 0 1" />
+    <limit effort="39" velocity="0.8727" />
+  </joint>
+  <link name="HalfArm1_Link">
+    <inertial>
+      <origin xyz="-4.4E-05 -0.09958 -0.013278" rpy="0 0 0" />
+      <mass value="1.1636" />
+      <inertia ixx="0.011088" ixy="5E-06" ixz="0" iyy="0.001072" iyz="-0.000691" izz="0.011255" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/half_arm_1_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/half_arm_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Actuator2" type="revolute">
+    <origin xyz="0 0.005375 -0.12838" rpy="1.5708 2.1343E-17 -1.1102E-16" />
+    <parent link="Shoulder_Link" />
+    <child link="HalfArm1_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.41" upper="2.41" effort="39" velocity="0.8727" />
+  </joint>
+  <link name="HalfArm2_Link">
+    <inertial>
+      <origin xyz="-4.4E-05 -0.006641 -0.117892" rpy="0 0 0" />
+      <mass value="1.1636" />
+      <inertia ixx="0.010932" ixy="0" ixz="-7E-06" iyy="0.011127" iyz="0.000606" izz="0.001043" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/half_arm_2_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/half_arm_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Actuator3" type="continuous">
+    <origin xyz="0 -0.21038 -0.006375" rpy="-1.5708 1.2326E-32 -2.9122E-16" />
+    <parent link="HalfArm1_Link" />
+    <child link="HalfArm2_Link" />
+    <axis xyz="0 0 1" />
+    <limit effort="39" velocity="0.8727" />
+  </joint>
+  <link name="ForeArm_Link">
+    <inertial>
+      <origin xyz="-1.8E-05 -0.075478 -0.015006" rpy="0 0 0" />
+      <mass value="0.9302" />
+      <inertia ixx="0.008147" ixy="-1E-06" ixz="0" iyy="0.000631" iyz="-0.0005" izz="0.008316" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/forearm_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/forearm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Actuator4" type="revolute">
+    <origin xyz="0 0.006375 -0.21038" rpy="1.5708 -6.6954E-17 -1.6653E-16" />
+    <parent link="HalfArm2_Link" />
+    <child link="ForeArm_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.66" upper="2.66" effort="39" velocity="0.8727" />
+  </joint>
+  <link name="SphericalWrist1_Link">
+    <inertial>
+      <origin xyz="1E-06 -0.009432 -0.063883" rpy="0 0 0" />
+      <mass value="0.6781" />
+      <inertia ixx="0.001596" ixy="0" ixz="0" iyy="0.001607" iyz="0.000256" izz="0.000399" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/spherical_wrist_1_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/spherical_wrist_1_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Actuator5" type="continuous">
+    <origin xyz="0 -0.20843 -0.006375" rpy="-1.5708 2.2204E-16 -6.373E-17" />
+    <parent link="ForeArm_Link" />
+    <child link="SphericalWrist1_Link" />
+    <axis xyz="0 0 1" />
+    <limit effort="9" velocity="0.8727" />
+  </joint>
+  <link name="SphericalWrist2_Link">
+    <inertial>
+      <origin xyz="1E-06 -0.045483 -0.00965" rpy="0 0 0" />
+      <mass value="0.6781" />
+      <inertia ixx="0.001641" ixy="0" ixz="0" iyy="0.00041" iyz="-0.000278" izz="0.001641" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/spherical_wrist_2_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/spherical_wrist_2_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Actuator6" type="revolute">
+    <origin xyz="0 0.00017505 -0.10593" rpy="1.5708 9.2076E-28 -8.2157E-15" />
+    <parent link="SphericalWrist1_Link" />
+    <child link="SphericalWrist2_Link" />
+    <axis xyz="0 0 1" />
+    <limit lower="-2.23" upper="2.23" effort="9" velocity="0.8727" />
+  </joint>
+  <link name="Bracelet_Link">
+    <inertial>
+      <origin xyz="-0.000281 -0.011402 -0.029798" rpy="0 0 0" />
+      <mass value="0.5006" />
+      <inertia ixx="0.000587" ixy="3E-06" ixz="3E-06" iyy="0.000369" iyz="0.000118" izz="0.000609" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/bracelet_no_vision_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://arna_base_description/meshes/bracelet_no_vision_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="Actuator7" type="continuous">
+    <origin xyz="0 -0.10593 -0.00017505" rpy="-1.5708 -5.5511E-17 9.6396E-17" />
+    <parent link="SphericalWrist2_Link" />
+    <child link="Bracelet_Link" />
+    <axis xyz="0 0 1" />
+    <limit effort="9" velocity="0.8727" />
+  </joint>
+  <link name="EndEffector_Link" />
+  <joint name="EndEffector" type="fixed">
+    <origin xyz="0 0 -0.0615250000000001" rpy="3.14159265358979 1.09937075168372E-32 0" />
+    <parent link="Bracelet_Link" />
+    <child link="EndEffector_Link" />
+    <axis xyz="0 0 0" />
+  </joint-->
+
+   <!-- hokuyo-
+  <gazebo reference="hokuyo_link">
+    <sensor type="gpu_ray" name="head_hokuyo_sensor">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>100</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>30.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <!- Noise parameters based on published spec for Hokuyo laser
+               achieving "+-30mm" accuracy at range < 10m.  A mean of 0.0m and
+               stddev of 0.01m will put 99.7% of samples within 0.03m of the true
+               reading. -
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
+        <topicName>/scan</topicName>
+        <frameName>hokuyo_link</frameName>
+      </plugin>
+    </sensor>
+  </gazebo>-->
+    <gazebo reference="hokuyo_link">
+      <sensor name="head_hokuyo_sensor" type="gpu_ray">
+         <pose>0 0 0 0 0 0</pose>
+         <visualize>false</visualize>
+         <update_rate>40</update_rate>
+         <ray>
+            <scan>
+               <horizontal>
+                  <samples>720</samples>
+                  <resolution>1</resolution>
+                  <min_angle>-1.570796</min_angle>
+                  <max_angle>1.570796</max_angle>
+                  <!--
+                  <min_angle>-2.26889</min_angle>
+                  <max_angle>2.268899</max_angle>
+                  -->
+               </horizontal>
+            </scan>
+            <range>
+               <min>0.10</min>
+               <max>30.0</max>
+               <resolution>0.01</resolution>
+            </range>
+            <noise>
+               <type>gaussian</type>
+               <mean>0.0</mean>
+               <stddev>0.01</stddev>
+            </noise>
+         </ray>
+         <plugin filename="libgazebo_ros_gpu_laser.so" name="gazebo_ros_head_hokuyo_controller">
+            <topicName>/scan</topicName>
+            <frameName>hokuyo_link</frameName>
+         </plugin>
+      </sensor>
+   </gazebo>
+
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fl_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint> <!--hardware_interface/EffortJointInterface-->
+    <actuator name="motor1">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="fr_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="bl_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="br_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+</robot>

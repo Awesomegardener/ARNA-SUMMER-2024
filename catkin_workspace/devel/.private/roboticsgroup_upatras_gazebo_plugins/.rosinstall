@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/user/catkin_workspace/devel/.private/roboticsgroup_upatras_gazebo_plugins/setup.sh

@@ -1,0 +1,1 @@
+/home/user/catkin_workspace/devel/.private/kortex_control/share/kortex_control/cmake/kortex_controlConfig.cmake

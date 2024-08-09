@@ -1,0 +1,4 @@
+/home/user/catkin_workspace/devel/./cmake.lock 9
+/home/user/catkin_workspace/devel/./local_setup.sh 9
+/home/user/catkin_workspace/devel/./local_setup.zsh 9
+/home/user/catkin_workspace/devel/./local_setup.bash 9

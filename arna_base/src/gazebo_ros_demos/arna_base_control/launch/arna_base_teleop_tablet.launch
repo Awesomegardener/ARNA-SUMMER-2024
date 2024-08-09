@@ -1,0 +1,7 @@
+<launch> 
+  <param name="axis_linear" value="0" type="int"/>
+  <param name="axis_angular" value="1" type="int"/>
+  <param name="scale_linear" value="0.00866141732" type="double"/> <!-- value is max_velocity/max_tablet_readout -->
+  <param name="scale_angular" value="1" type="double"/>
+  <node pkg="arna_base_control" type="arna_base_teleop_tablet" name="teleop_tablet"/>
+</launch>

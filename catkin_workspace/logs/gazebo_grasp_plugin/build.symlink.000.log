@@ -1,0 +1,7 @@
+Warning: Cannot symlink from /home/user/catkin_workspace/devel/.private/gazebo_grasp_plugin/local_setup.sh to existing file /home/user/catkin_workspace/devel/./local_setup.sh
+Warning: Source hash: b0cb81afa2aa8ed804fc29468250f204
+Warning: Dest hash: 4c4b8a4a3c40ddc84f475f8f48eb5d2a
+Symlinking /home/user/catkin_workspace/devel/lib/libgazebo_grasp_fix.so
+Symlinking /home/user/catkin_workspace/devel/lib/pkgconfig/gazebo_grasp_plugin.pc
+Symlinking /home/user/catkin_workspace/devel/share/gazebo_grasp_plugin/cmake/gazebo_grasp_pluginConfig-version.cmake
+Symlinking /home/user/catkin_workspace/devel/share/gazebo_grasp_plugin/cmake/gazebo_grasp_pluginConfig.cmake

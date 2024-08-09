@@ -1,0 +1,8 @@
+Warning: Cannot symlink from /home/user/catkin_workspace/devel/.private/roboticsgroup_upatras_gazebo_plugins/local_setup.sh to existing file /home/user/catkin_workspace/devel/./local_setup.sh
+Warning: Source hash: 1d7761ab8d4e02b3206607bf9e6a93cb
+Warning: Dest hash: 4c4b8a4a3c40ddc84f475f8f48eb5d2a
+Symlinking /home/user/catkin_workspace/devel/lib/libroboticsgroup_upatras_gazebo_disable_link_plugin.so
+Symlinking /home/user/catkin_workspace/devel/lib/libroboticsgroup_upatras_gazebo_mimic_joint_plugin.so
+Symlinking /home/user/catkin_workspace/devel/lib/pkgconfig/roboticsgroup_upatras_gazebo_plugins.pc
+Symlinking /home/user/catkin_workspace/devel/share/roboticsgroup_upatras_gazebo_plugins/cmake/roboticsgroup_upatras_gazebo_pluginsConfig-version.cmake
+Symlinking /home/user/catkin_workspace/devel/share/roboticsgroup_upatras_gazebo_plugins/cmake/roboticsgroup_upatras_gazebo_pluginsConfig.cmake

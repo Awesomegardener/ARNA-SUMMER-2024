@@ -1,0 +1,62 @@
+CONAN_TARGET_PLATFORM is x86
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 635, in _build_master
+    ws.require(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 943, in require
+    needed = self.resolve(parse_requirements(requirements))
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 834, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (Jinja2 2.11.3 (/usr/local/lib/python3.5/dist-packages), Requirement.parse('Jinja2<4.0.0,>=3.0; python_version >= "3"'), {{'conan'}})
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/conan", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2927, in <module>
+    @{atunderscore}call_aside
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2913, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2940, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 637, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 650, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 829, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'Jinja2<4.0.0,>=3.0; python_version >= "3"' distribution was not found and is required by conan
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 635, in _build_master
+    ws.require(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 943, in require
+    needed = self.resolve(parse_requirements(requirements))
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 834, in resolve
+    raise VersionConflict(dist, req).with_context(dependent_req)
+pkg_resources.ContextualVersionConflict: (Jinja2 2.11.3 (/usr/local/lib/python3.5/dist-packages), Requirement.parse('Jinja2<4.0.0,>=3.0; python_version >= "3"'), {{'conan'}})
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/bin/conan", line 5, in <module>
+    from pkg_resources import load_entry_point
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2927, in <module>
+    @{atunderscore}call_aside
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2913, in _call_aside
+    f(*args, **kwargs)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2940, in _initialize_master_working_set
+    working_set = WorkingSet._build_master()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 637, in _build_master
+    return cls._build_from_requirements(__requires__)
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 650, in _build_from_requirements
+    dists = ws.resolve(reqs, Environment())
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 829, in resolve
+    raise DistributionNotFound(req, requirers)
+pkg_resources.DistributionNotFound: The 'Jinja2<4.0.0,>=3.0; python_version >= "3"' distribution was not found and is required by conan
+[31m[1mCMake Error[0m at /home/user/catkin_workspace/src/ros_kortex/kortex_driver/cmake/conan.cmake:399 (message):
+  Conan install failed='1'
+[36mCall Stack (most recent call first):[0m
+  cmake/conan.cmake:485 (conan_cmake_install)
+  CMakeLists.txt:86 (conan_cmake_run)
+
+

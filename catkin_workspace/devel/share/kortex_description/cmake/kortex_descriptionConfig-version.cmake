@@ -1,0 +1,1 @@
+/home/user/catkin_workspace/devel/.private/kortex_description/share/kortex_description/cmake/kortex_descriptionConfig-version.cmake

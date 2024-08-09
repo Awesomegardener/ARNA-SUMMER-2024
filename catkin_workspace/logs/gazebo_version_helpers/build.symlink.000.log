@@ -1,0 +1,7 @@
+Warning: Cannot symlink from /home/user/catkin_workspace/devel/.private/gazebo_version_helpers/local_setup.sh to existing file /home/user/catkin_workspace/devel/./local_setup.sh
+Warning: Source hash: baadfb1dd0dccf32ed4a248fdd7e0dec
+Warning: Dest hash: 4c4b8a4a3c40ddc84f475f8f48eb5d2a
+Symlinking /home/user/catkin_workspace/devel/lib/libgazebo_version_helpers.so
+Symlinking /home/user/catkin_workspace/devel/lib/pkgconfig/gazebo_version_helpers.pc
+Symlinking /home/user/catkin_workspace/devel/share/gazebo_version_helpers/cmake/gazebo_version_helpersConfig.cmake
+Symlinking /home/user/catkin_workspace/devel/share/gazebo_version_helpers/cmake/gazebo_version_helpersConfig-version.cmake

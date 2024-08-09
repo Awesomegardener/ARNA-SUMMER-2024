@@ -1,0 +1,3 @@
+Warning: Cannot symlink from /home/user/catkin_workspace/devel/.private/kortex_control/local_setup.sh to existing file /home/user/catkin_workspace/devel/./local_setup.sh
+Warning: Source hash: 1cf2b18b6269bbaa035eb6ad9ae80ab3
+Warning: Dest hash: 4c4b8a4a3c40ddc84f475f8f48eb5d2a
