@@ -1,4 +1,4 @@
-<h1>ARNA SUMMER 2024</h1>
+<h1>ARNA SUMMER 2024 (ROS Kinetic)</h1>
 
 **Skip to the bottom to read what is done, and what needs to be done.**
 
