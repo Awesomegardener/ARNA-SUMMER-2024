@@ -93,6 +93,21 @@ from kortex_driver.srv import ReadAction, ReadActionRequest, ExecuteAction, Exec
 _______________________________________________________________________________________
 _______________________________________________________________________________________
 
+<h2>3. Actors</h2>
+
+**Actor_ws does not run correctly in ROS Kinetic**
+
+**Actors in general does not work well in ROS Kinetic since it needs Gazebo version 8+
+
+1. Follow this link to create a new hospital world: https://github.com/aws-robotics/aws-robomaker-hospital-world
+
+2. Follow this link to create actors: https://classic.gazebosim.org/tutorials?tut=actor&cat=build_robot
+
+**Copy and paste the actors from the 2nd link into the .world files in the 1st link. Edit the actor trajectory to your liking**
+
+_______________________________________________________________________________________
+_______________________________________________________________________________________
+
 <h2>What is Done</h2>
 
 **ARNA's Transformation in RViz is fixed, lidar should be facing the correct direction**
